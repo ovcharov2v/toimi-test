@@ -1,0 +1,212 @@
+@import "../../shared/styles/vars";
+
+.footer {
+  padding-top: 51px;
+  padding-bottom: 20px;
+  background: linear-gradient(93.29deg, #388AF3 21.04%, #A483E2 88.77%);
+  color: $color-white;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 46px;
+    padding-bottom: 26px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 51px;
+    padding-bottom: 20px;
+  }
+
+  &__grid { // .footer__grid
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: 3fr 3fr 4fr;
+      grid-column-gap: 20px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 30px;
+    }
+
+    &--bottom { // .footer__grid--bottom
+      margin-top: 5px;
+      grid-row-gap: 10px;
+
+      @media (min-width: $breakpoint-tablet) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__col { // .footer__col
+    &--nav {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 30px auto;
+      grid-row-gap: 22px;
+      max-width: 268px;
+
+      @media (min-width: $breakpoint-tablet) {
+        grid-row-gap: 28px;
+        max-width: 100%;
+      }
+    }
+
+    &--logo {// .footer__col--logo
+      width: 81px;
+      margin-bottom: 48px;
+
+      @media (min-width: $breakpoint-tablet) {
+        grid-column: 1 / 4;
+        margin-bottom: 58px;
+        width: auto;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        grid-column: 1;
+        margin-bottom: 0;
+      }
+    }
+
+    &--with-messengers {// .footer__col--with-messengers
+      display: grid;
+      grid-template-columns: 1fr 34px;
+
+      @media (min-width: $breakpoint-desktop) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__col-title { // .footer__col-title
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 700;
+
+    &::after {
+      flex-shrink: 0;
+      display: block;
+      width: 9px;
+      height: 9px;
+      margin-left: 10px;
+      border-radius: 50%;
+      background-color: $color-white;
+      content: "";
+    }
+
+    .footer__col--with-messengers & {
+      grid-column: 1 / 3;
+
+      @media (min-width: $breakpoint-tablet) {
+        grid-column: 1
+      }
+      @media (min-width: $breakpoint-desktop) {
+        grid-column: 1 / 3;
+      }
+    }
+  }
+
+  &__nav { // .footer__nav
+    margin-bottom: 50px;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 126px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__nav-elem { // .footer__nav-elem
+    &:not(:last-child) {
+      margin-bottom: 15px;
+
+      @media (min-width: $breakpoint-tablet) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__nav-link { // .footer__nav-link
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+
+    &--tel { // .footer__nav-link--tel
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__nav-link-arrow { // .footer__nav-link-arrow
+    margin-left: 15px;
+  }
+
+  &__bottom-text { // .footer__bottom-text
+    margin-top: auto;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+
+    &--copyright { // .footer__bottom-text--copyright
+      grid-row: 2;
+
+      @media (min-width: $breakpoint-tablet) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--agreement { // .footer__bottom-text--agreement
+      grid-row: 1;
+    }
+  }
+
+  &__messenger-list { // .footer__messenger-list
+    grid-column: 2;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-row: 1/3;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      grid-row: 2;
+    }
+  }
+
+  &__messenger-box { // .footer__messenger-box
+    padding-bottom: 20px;
+  }
+
+  &__messenger { // .footer__messenger
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    &--whatsapp { // .footer__messenger--whatsapp
+      background-color: #7BE495;
+    }
+
+    &--telegram { // .footer__messenger--telegram
+      background-color: #388AF3;
+    }
+  }
+
+  &__messenger-logo { // .footer__messenger-logo
+    .footer__messenger--telegram & {
+      transform: translateX(-2px);
+    }
+  }
+}

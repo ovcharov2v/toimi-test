@@ -1,0 +1,15 @@
+.h1 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  color: $color-blue;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 60px;
+    line-height: 120px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 80px;
+  }
+}

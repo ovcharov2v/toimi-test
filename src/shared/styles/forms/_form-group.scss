@@ -1,0 +1,67 @@
+@import "../../../shared/styles/vars";
+
+.form-group {
+  position: relative;
+  padding-bottom: 21px;
+  width: 100%;
+
+  &__input { // .form-group__input
+    width: 100%;
+    min-width: 0;
+    padding: 2px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 26px;
+    line-height: 30px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--textarea {
+      height: 91px;
+      resize: none;
+    }
+  }
+
+  &__label { // .form-group__label
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 300;
+    color: #ccc;
+    pointer-events: none;
+    transition: transform $transition-default, color $transition-default, font-size $transition-default;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 26px;
+      line-height: 30px;}
+
+    .form-group--error & {
+      color: $color-red;
+    }
+
+    .form-group__input:hover + &,
+    .form-group__input:focus + &,
+    .form-group:not(.form-group--empty) & {
+      font-size: 16px;
+      line-height: 18px;
+      transform: translateY(-100%) translateY(-5px);
+    }
+  }
+
+  &__asterisk { // .form-group__asterisk
+    color: $color-red;
+  }
+
+  &__error-message { // .form-group__error-message
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-red;
+  }
+}
